@@ -14,14 +14,12 @@ coreos:
     - name: static.network
       content: |
         [Match]
-        Name=ens3
+        Name=test
 
         [Network]
         Address=192.168.202.243
-        Gateway=x.x.x.1
-        DNS=x.x.x.10
-        DNS=x.x.x.11 
-        DNS=8.8.8.8
+        Gateway=192.168.202.1
+        DNS=192.168.202.7
 users:  
   - name: core
     ssh-authorized-keys: 
