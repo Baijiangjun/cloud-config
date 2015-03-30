@@ -17,7 +17,7 @@ coreos:
         Name=test
 
         [Network]
-        Address=192.168.222.243/24
+        Address=192.168.202.243/24
         Gateway=192.168.202.1
         DNS=192.168.202.7
 users:  
