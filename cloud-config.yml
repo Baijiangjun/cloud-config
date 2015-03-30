@@ -1,0 +1,31 @@
+#cloud-config
+
+hostname: BARCA01
+
+coreos:  
+  etcd:    
+    addr: $private_ipv4:4001
+    peer-addr: $private_ipv4:7001
+  units:
+    - name: etcd.service
+      command: start
+    - name: fleet.service
+      command: start
+    - name: static.network
+      content: |
+        [Match]
+        Name=ens3
+
+        [Network]
+        Address=192.168.202.243
+        Gateway=x.x.x.1
+        DNS=x.x.x.10
+        DNS=x.x.x.11 
+        DNS=8.8.8.8
+users:  
+  - name: core
+    ssh-authorized-keys: 
+      - ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEApbU4Wl+uapZX6GHVNR1kmEtkwNjs4Z7UD84G4FbHM95tRghqiN7E34AV7viK7OCahsgh2adZbqr6KeavtcFAMQFW+3YwL5nN4ilPya/si/Y6qO9ETcI16PYGRc8K6zD9JzQjimNvzwKaUNlSdenK0FycC5LSyNZWjKukDpcHfi1e0gzQFbUNMRIJGfIQlmh07OJXWJiZ8XPm5GNeLw4nLIuhlhAD36ame7/jMNOLgRfC2tFBd41cJsoJ5EZZ+VgUyM13h8jGQN6kHGus5eeJD3goBsZ7UjLgOfyaNOrgNbVzmVojWzmmkEdZaNocDbJ8lQYubttc9rDZSBduqhuFxw==
+  - groups:
+      - sudo
+      - docker
