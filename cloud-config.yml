@@ -1,6 +1,6 @@
 #cloud-config
 
-hostname: BARCA01
+hostname: BARCA02
 
 coreos:  
   etcd:    
@@ -17,7 +17,7 @@ coreos:
         Name=enp3s0f0
 
         [Network]
-        Address=192.168.203.201/24
+        Address=192.168.203.202/24
         Gateway=192.168.203.1
         DNS=192.168.202.7
         DNS=192.168.203.2
