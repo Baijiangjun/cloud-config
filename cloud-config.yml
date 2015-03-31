@@ -14,7 +14,7 @@ coreos:
     - name: static.network
       content: |
         [Match]
-        Name=enp7s0
+        Name=enp3s0f0
 
         [Network]
         Address=192.168.203.201/24
