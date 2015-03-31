@@ -17,9 +17,9 @@ coreos:
         Name=enp7s0
 
         [Network]
-        Address=192.168.202.243/24
-        Gateway=192.168.202.1
-        DNS=192.168.202.7
+        Address=192.168.203.201/24
+        Gateway=192.168.203.1
+        DNS=192.168.203.2
 users:  
   - name: core
     ssh-authorized-keys: 
